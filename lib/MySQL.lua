@@ -58,6 +58,12 @@ local function safeArgs(query, parameters, cb, transaction)
 		end
 	end
 
+	if cb then
+		return query, parameters, cb
+	else
+		return query, parameters
+	end
+
 	return query, parameters, cb
 end
 
